@@ -1,0 +1,113 @@
+<nav>
+  <div *ngIf="!isUserLoggedIn && !isAdminLoggedIn">
+    <nz-header class="main-header navbar navbar-expand-lg navbar-dark bg-dark" nz-row nzType="flex">
+      <div>
+        <a href="#" >
+          <i nz-icon nzType="question-circle" nzTheme="outline"></i>
+        </a>
+        <a routerLink="/" style="margin-left: 20px; font-weight: bolder; font-size: x-large;">
+          DoConnect
+        </a>
+        <a routerLink="/" style="margin-left: 20px; font-weight:bold; font-size: small;">
+          Quench your thrist of knowledge
+        </a>
+      </div>
+      <div class="nav-links">
+        <a nz-button nzType="link" routerLink="/register" routerLinkActive="active"
+          style="font-size: large; font-weight: bolder">Register</a>
+        <a nz-button nzType="link" routerLink="/login" routerLinkActive="active"
+          style="font-size: large; font-weight: bolder">Login</a>
+      </div>
+    </nz-header>
+
+    <nz-sider nzCollapsible nzBreakpoint="lg" [nzCollapsedWidth]="0" class="mobile-sidenav">
+      <ul class="nav-links" nz-menu nzTheme="dark" nzMode="inline">
+        <li nz-menu-item>
+          <a nz-button nzType="link" routerLink="/register" routerLinkActive="active">Registration</a>
+        </li>
+        <li nz-menu-item>
+          <a nz-button nzType="link" routerLink="/login" routerLinkActive="active">Login</a>
+        </li>
+      </ul>
+    </nz-sider>
+  </div>
+
+  <div *ngIf="isUserLoggedIn">
+    <nz-header class="main-header navbar navbar-expand-lg navbar-dark bg-dark" nz-row nzType="flex">
+      <div class="do2">
+        <a href="#" >
+          <i nz-icon nzType="question-circle" nzTheme="outline"></i>
+        </a>
+        <a routerLink="/user/dashboard" style="font-size: large; font-weight: bolder; margin-left: 20px;">
+          DoConnect
+        </a>
+        <a routerLink="/" style="margin-left: 20px; font-weight:bold; font-size: small;">
+          quench your thrist of knowledge
+        </a>
+      </div>
+      <div class="nav-links">
+        <a nz-button nzType="link" routerLink="/user/dashboard" routerLinkActive="active"
+          style="font-size: large; font-weight: bold">Dashboard&nbsp;<i class="fa fa-tachometer"
+            aria-hidden="true"></i></a>
+        <a nz-button nzType="link" routerLink="/user/post-question" routerLinkActive="active"
+          style="font-size: large; font-weight: bold">Post Question&nbsp;<i class="fa fa-question-circle"
+            aria-hidden="true"></i></a>
+        <a nz-button nzType="link" routerLink="/chatbox" routerLinkActive="active"
+          style="font-size: large; font-weight: bold">Chatbox&nbsp;<i class="fa fa-comments" aria-hidden="true"></i></a>
+        <a nz-button nzType="link" (click)="logout()" routerLinkActive="active"
+          style="font-size: large; font-weight: bold">Logout</a>
+      </div>
+    </nz-header>
+
+    <nz-sider nzCollapsible nzBreakpoint="lg" [nzCollapsedWidth]="0" class="mobile-sidenav">
+      <ul class="nav-links" nz-menu nzTheme="dark" nzMode="inline">
+        <li nz-menu-item>
+          <a nz-button nzType="link" routerLink="/user/dashboard" routerLinkActive="active">Dashboard</a>
+        </li>
+        <li nz-menu-item>
+          <a nz-button nzType="link" routerLink="/user/post-question" routerLinkActive="active">Post Question</a>
+        </li>
+        <li nz-menu-item>
+          <a nz-button nzType="link" routerLink="/chatbox" routerLinkActive="active">Chatbox</a>
+        </li>
+        <li nz-menu-item>
+          <a nz-button nzType="link" (click)="logout()" routerLinkActive="active">Logout</a>
+        </li>
+      </ul>
+    </nz-sider>
+  </div>
+
+  <div *ngIf="isAdminLoggedIn">
+    <nz-header class="main-header  navbar navbar-expand-lg navbar-dark bg-dark" nz-row nzType="flex">
+      <div>
+        <a href="#" >
+          <i nz-icon nzType="question-circle" nzTheme="outline"></i>
+        </a>
+        <a routerLink="/user/dashboard" style="font-size: large; font-weight: bolder; margin-left: 20px;">
+          DoConnect
+        </a>
+        <a routerLink="/" style="margin-left: 20px; font-weight:bold; font-size: small;">
+          quench your thrist of knowledge
+        </a>
+      </div>
+      <div class="nav-links">
+        <a nz-button nzType="link" routerLink="/admin/dashboard" routerLinkActive="active"
+          style="font-size: large; font-weight: bold">Dashboard&nbsp;<i class="fa fa-tachometer"
+            aria-hidden="true"></i></a>
+        <a nz-button nzType="link" (click)="logout()" routerLinkActive="active"
+          style="font-size: large; font-weight: bold">Logout</a>
+      </div>
+    </nz-header>
+
+    <nz-sider nzCollapsible nzBreakpoint="lg" [nzCollapsedWidth]="0" class="mobile-sidenav">
+      <ul class="nav-links" nz-menu nzTheme="dark" nzMode="inline">
+        <li nz-menu-item>
+          <a nz-button nzType="link" routerLink="/admin/dashboard" routerLinkActive="active">Dashboard</a>
+        </li>
+        <li nz-menu-item>
+          <a nz-button nzType="link" (click)="logout()" routerLinkActive="active">Logout</a>
+        </li>
+      </ul>
+    </nz-sider>
+  </div>
+</nav>

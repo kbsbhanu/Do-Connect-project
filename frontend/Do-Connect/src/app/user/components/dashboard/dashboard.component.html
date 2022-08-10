@@ -1,0 +1,56 @@
+<div style="background-color: #539fde;">
+  <div style="min-height: 93vh; padding: 30px; background-image: url(../../assets/images/askquestionimg.jpg);">
+    <nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'" nzTip="Working...">
+      <div>
+
+        <div nz-row>
+          <div nz-col nzSpan="24" style=" padding: 30px;">
+            <div class="section">
+              <form nz-form [nzLayout]="'inline'" [formGroup]="validateForm" (ngSubmit)="submitForm()">
+                <nz-form-item style="width: 80%;">
+                  <nz-form-control nzErrorTip="Please enter the title">
+
+                    <input formControlName="title" nz-input placeholder="Title" style="font-weight:bold; color:black;"/>
+
+                  </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                  <nz-form-control>
+                    <button nz-button nzType="primary" style="font-style: italic; font-weight: bold; color: black;" class="btn btn-primary" 
+                      [disabled]="!validateForm.valid">Search</button>
+                  </nz-form-control>
+                </nz-form-item>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="margin-top: 20px;;" class="child" *ngFor="let allquestion of allquestions">
+          <h5 style="cursor: pointer; color: #e91010;" routerLink="/user/view-question/{{allquestion.id}}">Title :
+            <b> {{allquestion.title}}</b>
+          </h5>
+          <div nz-row>
+            <div nz-col nzSpan="24">
+              <h6 class="font-weight-bold">Question : <b>{{allquestion.body}}</b></h6>
+              <hr>
+              <h6> Posted By :
+                <b>{{allquestion.userName}}</b>
+              </h6>
+              <h6>
+                Posted On :
+                <b>{{allquestion.createdDate | date: 'EEEE, MMMM d, y'}}</b>
+              </h6>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="pagination">
+          <nz-pagination style="float: right; " (nzPageIndexChange)="pageIndexChange($event)"
+            [nzPageIndex]="currentPage" [nzTotal]="total" [nzPageSize]="5"></nz-pagination>
+        </div>
+      </div>
+    </nz-spin>
+  </div>
+</div>

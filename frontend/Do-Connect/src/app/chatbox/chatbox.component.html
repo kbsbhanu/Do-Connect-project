@@ -1,0 +1,35 @@
+<div style="background-color:rgb(128, 134, 124)"> 
+  <h3 style="text-align: center; color: rgb(254, 254, 254); padding-top: 30px; padding-bottom: 50px; font-weight: bold;">Welcome to Chat</h3>
+  <div class="container my-2" *ngFor="let message of messages">
+    <div class="card">
+      <h4>{{ message.message }}</h4>
+      <h6>From - {{ message.fromUser }}</h6>
+    </div>
+  </div>
+  
+  <div class="container d-flex flex-row"  >
+    <textarea
+      type="text"
+      class="form-control"
+      placeholder="Enter message"
+      #search
+      (keyup.enter)="sendMessage(search.value)"
+      (keyup.enter)="search.value = ''"
+      aria-label="Search"
+      aria-describedby="addon-wrapping"
+    ></textarea>
+  
+    <button
+      class="btn btn-primary"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapseOne"
+      aria-expanded="false"
+      aria-controls="collapseOne"
+      (click)="getMessage()"
+      
+    >
+      Join the Chat <i class="fa fa-comment" aria-hidden="true"></i>
+    </button>
+  </div>
+  </div>

@@ -1,0 +1,36 @@
+.footer {
+  background-color: rgb(16, 12, 12);
+  padding: 12px 47px; 
+  
+
+
+  a {
+  //   font-family: $secondary-font;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    
+  }
+
+  i {
+    margin-left: 70px;
+      font-size: 18px;
+      color: #9CA3AF;
+      
+  }
+}
+
+.powered-by {
+  // font-family: $secondary-font;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 20px;
+  color: white !important;
+  // color: $color-transparent-seven;
+  
+}
+
+::ng-deep.ant-typography {
+  color: #9CA3AF;
+  
+}
