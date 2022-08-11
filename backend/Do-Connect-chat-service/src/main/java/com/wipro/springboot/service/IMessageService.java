@@ -12,4 +12,5 @@ public interface IMessageService {
 
 	public List<MessageDTO> getMessage();
 
+
 }

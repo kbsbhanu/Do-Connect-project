@@ -20,8 +20,8 @@ public class EmailSenderServiceImpl implements IEmailSenderService {
 		try {
 			SimpleMailMessage mailMessage = new SimpleMailMessage();
 			mailMessage.setFrom(sender);
-			mailMessage.setTo("krishna.gupta_cs18@gla.ac.in");
-			mailMessage.setText("Need approval for the new question");
+			mailMessage.setTo("varunteja321000@gmail.com");
+			mailMessage.setText("A new question needs to be verified");
 			mailMessage.setSubject("New Question posted");
 			javaMailSender.send(mailMessage);
 			return "Mail Sent Successfully...";
@@ -36,8 +36,8 @@ public class EmailSenderServiceImpl implements IEmailSenderService {
 		try {
 			SimpleMailMessage mailMessage = new SimpleMailMessage();
 			mailMessage.setFrom(sender);
-			mailMessage.setTo("krishna.gupta_cs18@gla.ac.in");
-			mailMessage.setText("Need approval for the new answer");
+			mailMessage.setTo("varunteja321000@gmail.com");
+			mailMessage.setText("A new answer needs to be verified");
 			mailMessage.setSubject("New Answer posted");
 			javaMailSender.send(mailMessage);
 			return "Mail Sent Successfully...";
